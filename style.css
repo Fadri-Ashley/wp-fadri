@@ -1,0 +1,423 @@
+/* ============================================================
+   VARIABEL & RESET
+   ============================================================ */
+:root {
+  --green:        #4f6f52;   /* hijau utama: judul, bar, aksen */
+  --green-band:   #55704f;   /* hijau blok contact */
+  --green-hover:  #3e5a41;
+  --ink:          #2f2f2f;   /* teks utama */
+  --muted:        #6b6b6b;   /* teks sekunder */
+  --line:         #d8d8d8;   /* garis pemisah */
+  --bg:           #ffffff;
+  --bg-soft:      #e6e8e3;   /* placeholder gambar */
+
+  --max-width: 1080px;
+  --gutter: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1, h2, h3, p, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: var(--bg-soft); /* biar tidak kosong saat gambar belum ada */
+}
+
+body {
+  font-family: 'Lato', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fokus keyboard tetap terlihat (aksesibilitas) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   LAYOUT DASAR
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: 90px;
+}
+
+/* Dua kolom: kiri judul, kanan konten */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ============================================================
+   TIPOGRAFI BERSAMA
+   ============================================================ */
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+
+.section__title {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--green);
+}
+
+.section__title--wide {
+  margin-bottom: 48px;
+}
+
+.rule {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin-block: 22px;
+}
+
+.rule--short {
+  width: 64px;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.lead {
+  max-width: 46ch;
+  color: var(--ink);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding-block: 80px 40px;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero__photo {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero__text {
+  text-align: center;
+}
+
+.hero__name {
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--green);
+  line-height: 1.15;
+}
+
+.hero__role {
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-block: 6px 22px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 11px 32px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.img-rounded {
+  border-radius: 14px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* ============================================================
+   EXPERIENCE & EDUCATION
+   ============================================================ */
+.timeline__item + .timeline__item {
+  margin-top: 46px;
+}
+
+.timeline__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.timeline__place {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.timeline__desc {
+  font-size: 0.93rem;
+  max-width: 52ch;
+  color: var(--ink);
+}
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skill__group + .skill__group {
+  margin-top: 48px;
+}
+
+.skill__category {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.skill__group .rule {
+  margin-block: 12px 22px;
+}
+
+.skill + .skill {
+  margin-top: 18px;
+}
+
+.skill__name {
+  font-size: 0.88rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.bar {
+  width: 100%;
+  max-width: 300px;
+  height: 12px;
+  background: var(--line);
+}
+
+.bar__fill {
+  display: block;
+  height: 100%;
+  width: 0;                    /* diisi oleh main.js saat bar terlihat */
+  background: var(--green);
+  transition: width 1s ease-out;
+}
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.project__img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.project__title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.project__desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact {
+  background: var(--green-band);
+  color: #fff;
+  padding-block: 80px 60px;
+}
+
+.contact__inner {
+  text-align: center;
+}
+
+.contact__title {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 300;
+  margin-bottom: 60px;
+}
+
+.contact__name {
+  font-weight: 700;
+}
+
+.contact__email {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.contact__email:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+.contact__label {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 46px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 14px;
+}
+
+.socials a {
+  color: #fff;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.copyright {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 48px;
+}
+
+/* ============================================================
+   ANIMASI REVEAL (dikendalikan main.js)
+   ============================================================ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 860px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding-block: 64px;
+  }
+
+  .hero__inner,
+  .split {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .avatar {
+    width: 220px;
+    height: 220px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .bar {
+    max-width: 100%;
+  }
+}
+
+/* Hormati preferensi pengguna yang tidak ingin animasi */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
