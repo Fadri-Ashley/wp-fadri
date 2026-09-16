@@ -1,11 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Portofolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fadri — Web Developer</title>
+  <meta name="description" content="Portofolio Fadri, web developer yang sedang belajar membangun web dari nol.">
+
+  <!-- Font Lato dari Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="container hero__inner">
+
+      <div class="hero__photo">
+        <!-- Ganti src di bawah dengan foto kamu: images/profile.jpg -->
+        <img src="images/profile.jpg" alt="Foto Fadri" class="avatar">
+      </div>
+
+      <div class="hero__text">
+        <h1 class="hero__name">Fadri</h1>
+        <p class="hero__role">Web Developer</p>
+        <a href="#contact" class="btn" data-scroll>Contact me</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about" data-reveal>
+      <div class="container split">
+
+        <div class="split__left">
+          <p class="eyebrow">Who I am</p>
+          <h2 class="section__title">About Me</h2>
+          <hr class="rule">
+          <p class="lead">
+            Saya penggemar teknologi yang sedang serius mendalami pengembangan web.
+            Saat ini saya membangun fondasi dengan HTML, CSS, dan JavaScript murni
+            sebelum melangkah ke React dan Next.js. Saya senang membedah cara kerja
+            sesuatu dari dasar, bukan sekadar memakainya.
+          </p>
+        </div>
+
+        <div class="split__right">
+          <!-- Ganti dengan foto workspace / ruang kerja kamu -->
+          <img src="images/about.jpg" alt="Ruang kerja saya" class="img-rounded">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE & EDUCATION ============ -->
+    <section class="section" id="experience" data-reveal>
+      <div class="container split">
+
+        <div class="split__left">
+          <h2 class="section__title">Experience &amp; Education</h2>
+        </div>
+
+        <div class="split__right">
+
+          <article class="timeline__item">
+            <hr class="rule rule--short">
+            <h3 class="timeline__title">2022 — Mahasiswa Baru</h3>
+            <p class="timeline__place">Universitas Nusantara</p>
+            <p class="timeline__desc">
+              Mulai mengenal pemrograman lewat mata kuliah dasar algoritma.
+              Di sini saya sadar bahwa membangun sesuatu jauh lebih menarik
+              daripada sekadar menghafal sintaks.
+            </p>
+          </article>
+
+          <article class="timeline__item">
+            <hr class="rule rule--short">
+            <h3 class="timeline__title">2026 — Project Pertama</h3>
+            <p class="timeline__place">Belajar Mandiri</p>
+            <p class="timeline__desc">
+              Membangun web portofolio ini dari nol dengan HTML, CSS, dan
+              JavaScript murni. Rencananya akan saya tulis ulang dengan React,
+              lalu Next.js, sebagai bahan perbandingan.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills" data-reveal>
+      <div class="container split">
+
+        <div class="split__left">
+          <p class="eyebrow">What I can do</p>
+          <h2 class="section__title">Skills &amp; Proficiencies</h2>
+        </div>
+
+        <div class="split__right">
+
+          <div class="skill__group">
+            <h3 class="skill__category">Frontend</h3>
+            <hr class="rule">
+
+            <!-- data-level = persentase bar, dibaca oleh main.js -->
+            <div class="skill">
+              <p class="skill__name">HTML &amp; CSS</p>
+              <div class="bar"><span class="bar__fill" data-level="85"></span></div>
+            </div>
+
+            <div class="skill">
+              <p class="skill__name">JavaScript</p>
+              <div class="bar"><span class="bar__fill" data-level="70"></span></div>
+            </div>
+          </div>
+
+          <div class="skill__group">
+            <h3 class="skill__category">Tools</h3>
+            <hr class="rule">
+
+            <div class="skill">
+              <p class="skill__name">Git &amp; GitHub</p>
+              <div class="bar"><span class="bar__fill" data-level="75"></span></div>
+            </div>
+
+            <div class="skill">
+              <p class="skill__name">Figma</p>
+              <div class="bar"><span class="bar__fill" data-level="55"></span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects" data-reveal>
+      <div class="container">
+        <h2 class="section__title section__title--wide">Projects</h2>
+
+        <div class="projects">
+
+          <article class="project">
+            <img src="images/project-1.jpg" alt="Tampilan Math Study Website" class="project__img">
+            <h3 class="project__title">Math Study Website</h3>
+            <p class="project__desc">Website latihan soal matematika, project pertama saya bersama teman.</p>
+          </article>
+
+          <article class="project">
+            <img src="images/project-2.jpg" alt="Tampilan PC Space Game" class="project__img">
+            <h3 class="project__title">PC Space Game</h3>
+            <p class="project__desc">Game luar angkasa sederhana untuk desktop, dibuat sebagai eksperimen.</p>
+          </article>
+
+          <article class="project">
+            <img src="images/project-3.jpg" alt="Tampilan Financial Record App" class="project__img">
+            <h3 class="project__title">Financial Record App</h3>
+            <p class="project__desc">Aplikasi pencatat keuangan harian untuk melacak pengeluaran pribadi.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ CONTACT / FOOTER ============ -->
+  <footer class="contact" id="contact">
+    <div class="container contact__inner">
+
+      <h2 class="contact__title">Contact me</h2>
+
+      <p class="contact__name">Fadri</p>
+      <a href="mailto:fadri@example.com" class="contact__email">fadri@example.com</a>
+
+      <p class="contact__label">Connect with me</p>
+
+      <ul class="socials">
+        <li>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c0-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 2.2c-3.1 0-3.5 0-4.7.06-.9.05-1.4.2-1.7.32-.4.17-.7.37-1 .67-.3.3-.5.6-.67 1-.12.3-.27.8-.32 1.7C3.54 9.4 3.53 9.8 3.53 12s0 2.6.06 3.8c.05.9.2 1.4.32 1.7.17.4.37.7.67 1 .3.3.6.5 1 .67.3.12.8.27 1.7.32 1.2.06 1.6.06 4.7.06s3.5 0 4.7-.06c.9-.05 1.4-.2 1.7-.32.4-.17.7-.37 1-.67.3-.3.5-.6.67-1 .12-.3.27-.8.32-1.7.06-1.2.06-1.6.06-3.8s0-2.6-.06-3.8c-.05-.9-.2-1.4-.32-1.7a2.7 2.7 0 0 0-.67-1c-.3-.3-.6-.5-1-.67-.3-.12-.8-.27-1.7-.32-1.2-.06-1.6-.06-4.7-.06m0 3.7a5.9 5.9 0 1 1 0 11.8 5.9 5.9 0 0 1 0-11.8m0 2.2a3.7 3.7 0 1 0 0 7.4 3.7 3.7 0 0 0 0-7.4m6.1-2.5a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path fill="currentColor" d="M22 5.9c-.7.3-1.5.5-2.4.6.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5a4.1 4.1 0 0 0 3.3 4 4.2 4.2 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.9A8.3 8.3 0 0 1 2 18.3a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.45-4 4.1v2.3H7.6V14h2.7v8z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5M3 9h4v12H3zM9.5 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <p class="copyright">&copy; <span id="year"></span> Fadri. Dibuat dengan HTML, CSS, dan JavaScript.</p>
+
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
